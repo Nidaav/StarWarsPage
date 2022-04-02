@@ -5,20 +5,31 @@
     <div class="left">
 
         <div class="logos">
-          <img src="assets/1.svg" alt="rebels logo">
+          <img data-slide="1" class="logo active"src="assets/1.svg" alt="rebels logo">
+          <img data-slide="2" class="logo"src="assets/2.svg" alt="rebels logo">
+          <img data-slide="3" class="logo"src="assets/3.svg" alt="rebels logo">
+
         </div>
 
         <div class="titles">
-          <h1>Un nouvel espoir</h1>
+          <h1 data-slide="1" class="active">Un nouvel espoir</h1>
+          <h1 data-slide="2">L'empire contre-attaque </h1>
+          <h1 data-slide="3">Le retour du Jedi </h1>
         </div>
 
 
         <div class="descriptions">
-          <p>C'est le premier opus de la saga Star Wars par sa date de sortie, mais le quatrième selon l'ordre chronologique de l'histoire.</p>
+          <p data-slide="1" class="active">C'est le premier opus de la saga Star Wars par sa date de sortie, mais le quatrième selon l'ordre chronologique de l'histoire.</p>
+
+          <p data-slide="2">La guerre entre le maléfique Empire galactique et son antagoniste, l’Alliance rebelle, bat son plein.</p>
+
+          <p data-slide="3">Le maléfique Empire galactique construit une nouvelle station spatiale Étoile de la mort pour anéantir définitivement l'Alliance rebelle.</p>
         </div>
 
         <div class="years">
-          19 <span>7</span><span>7</span>
+          19 <span class="active">7</span><span class="active">7</span>
+          <span>8</span><span>0</span>
+          <span>8</span><span>3</span>
         </div>
     </div>
 
@@ -26,7 +37,9 @@
     <div class="right">
 
         <div class="images">
-          <div class="first-image" style="background-image: url(assets/1.jpg)"></div>
+          <div data-slide="1" class="image active" style="background-image: url(assets/1.jpg)"></div>
+        <div data-slide="2" class="image right" style="background-image: url(assets/2.jpg)"></div>
+        <div data-slide="3" class="image right" style="background-image: url(assets/3.jpg)"></div>
         </div>
     </div>
   </section>
@@ -46,11 +59,24 @@
     </div>
 
     <ul  class="stepper">
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
+
+      <li data-slide="1" class="active"></li>
+
+      <li data-slide="2" class="active">
+        <div class="line"></div>
+      </li>
+
+      <li data-slide="3" class="active">
+        <div class="line"></div>
+      </li>
+
+      <li>
+        <div class="line"></div>
+      </li>
+      <li>
+        <div class="line"></div>
+      </li>
+
     </ul>
 
 </nav>

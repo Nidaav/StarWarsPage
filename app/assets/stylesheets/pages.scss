@@ -1,6 +1,4 @@
-// Place all the styles related to the pages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+
 body {
   background: #060447;
   font-size: 16px;
@@ -26,35 +24,100 @@ main{
       .logos{
         height: 80px;
         margin-bottom: 24px;
+        position: relative;
 
-        img {
+        .logo {
+          position: absolute;
+          top: 0;
+          left: 0;
           width: 80px;
+          transform: translate3d(0, 0, 0);
+          transition: transform 1s ease, opacity 1s ease;
+
+          &:not(.active){
+            opacity: 0;
+            transform: translate3d(100%, O, O);
+          }
+
+          &.leave{
+            opacity: 0;
+            transform: translate3d(-100%, O, O);
+          }
         }
       }
 
       .titles {
         height: 49px;
-        margin-bottom: 8px;
+        margin-bottom: 36px;
+        position: relative;
+
         h1 {
           font-weight: bold;
           font-size: 40px;
           line-height: 49px;
+          white-space: nowrap;
+
+          transform: translate3d(0, 0, 0);
+          transition: transform 1s ease, opacity 1s ease;
+          position: absolute;
+          left: 0;
+
+          &:not(.active) {
+            opacity: 0;
+            transform: translate3d(100%, O, O);
+          }
+
+          &.leave {
+            opacity: 0;
+            transform: translate3d(-100%, O, O);
+          }
         }
       }
 
       .descriptions {
         margin-bottom: auto;
-        max-width: 422px;
 
         p {
+          max-width: 422px;
           font-size: 20px;
           line-height: 30px;
+
+          transform: translate3d(0, 0, 0);
+          transition: transform 1s ease, opacity 1s ease;
+          position: absolute;
+
+          &:not(.active) {
+            opacity: 0;
+            transform: translate3d(100%, O, O);
+          }
+
+          &.leave {
+            opacity: 0;
+            transform: translate3d(-100%, O, O);
+          }
         }
       }
 
       .years {
           font-size: 200px;
           font-weight: bold;
+          margin-top: 300px;
+
+          span {
+            transform: translate3d(0, 0, 0);
+            transition: transform 1s ease, opacity 1s ease;
+            position: absolute;
+
+            &:not(.active) {
+              opacity: 0;
+              transform: translate3d(100%, O, O);
+            }
+
+            &.leave {
+              opacity: 0;
+              transform: translate3d(-100%, O, O);
+            }
+          }
       }
     }
 
@@ -65,33 +128,47 @@ main{
       .images {
         aspect-ratio: 2/3;
         position: relative;
+        overflow: hidden;
 
-        .first-image {
+        .image {
           width: 100%;
           height: 100%;
           background-size: cover;
           position: absolute;
           top: 0;
           left: 0;
+          transition: transform 1s ease;
+
+          &.left {
+            transform: translate3d(-100%, 0, 0);
+          }
+
+          &.right{
+            transform: translate3d(100%, 0, 0);
+          }
         }
       }
     }
   }
 }
 .low-navbar {
+  max-width: 1280px;
+  margin: auto;
   display: flex;
   gap: 100px;
   align-items: center;
   padding: 0 24px;
+  margin-bottom: 100px;
 
   .actions {
 
     .left-arrow, .right-arrow {
       display: inline-block;
+      cursor: pointer;
     }
     .left-arrow {
       transform: scaleX(-1);
-      margin-right: 45px;
+      margin-right: 40px;
     }
   }
 
@@ -103,15 +180,49 @@ main{
 
     li {
       position: relative;
+      flex-grow: 1;
+
+      .line {
+        &:before, &:after {
+        content: '';
+        position: absolute;
+        height: 3px;
+        background: #FFF38A;
+        right: 32px;
+        left: 0;
+        opacity: .3;
+        }
+
+        &:after {
+          opacity: 1;
+          transform: scaleX(0);
+          transform-origin: left;
+          transition: transform 1s ease-out;
+        }
+      }
 
       &:after {
         content: '';
+        right: 0;
         position: absolute;
         width: 32px;
         height: 32px;
         background: #FFF38A;
+        opacity: .3;
         border-radius: 50%;
-        transform: translate(-100%, -50%);
+        transform: translate(0%, -50%);
+      }
+
+      &.active {
+        .line {
+          &:after{
+            transform: scaleX(1);
+          }
+        }
+
+        &:after {
+          opacity: 1;
+        }
       }
     }
   }

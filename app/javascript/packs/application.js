@@ -11,3 +11,8 @@ import "channels"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+import { slides } from '../components/_animation'
+
+console.log("Hello from app/javascript/packs/application.js!");
+console.log(slides);
