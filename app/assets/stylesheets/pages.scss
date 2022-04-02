@@ -1,0 +1,118 @@
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+body {
+  background: #060447;
+  font-size: 16px;
+  font-family: 'Montserrat';
+  color: #FFF38A;
+}
+
+main{
+  max-width: 1280px;
+  margin: auto;
+  margin-top: 50px;
+  padding: 0 24px;
+
+  section {
+    display: flex;
+    margin-bottom: 80px;
+    .left{
+      flex: 3;
+      display: flex;
+      flex-direction: column;
+
+
+      .logos{
+        height: 80px;
+        margin-bottom: 24px;
+
+        img {
+          width: 80px;
+        }
+      }
+
+      .titles {
+        height: 49px;
+        margin-bottom: 8px;
+        h1 {
+          font-weight: bold;
+          font-size: 40px;
+          line-height: 49px;
+        }
+      }
+
+      .descriptions {
+        margin-bottom: auto;
+        max-width: 422px;
+
+        p {
+          font-size: 20px;
+          line-height: 30px;
+        }
+      }
+
+      .years {
+          font-size: 200px;
+          font-weight: bold;
+      }
+    }
+
+
+    .right{
+      flex: 2;
+
+      .images {
+        aspect-ratio: 2/3;
+        position: relative;
+
+        .first-image {
+          width: 100%;
+          height: 100%;
+          background-size: cover;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+      }
+    }
+  }
+}
+.low-navbar {
+  display: flex;
+  gap: 100px;
+  align-items: center;
+  padding: 0 24px;
+
+  .actions {
+
+    .left-arrow, .right-arrow {
+      display: inline-block;
+    }
+    .left-arrow {
+      transform: scaleX(-1);
+      margin-right: 45px;
+    }
+  }
+
+  ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    flex-grow: 1;
+
+    li {
+      position: relative;
+
+      &:after {
+        content: '';
+        position: absolute;
+        width: 32px;
+        height: 32px;
+        background: #FFF38A;
+        border-radius: 50%;
+        transform: translate(-100%, -50%);
+      }
+    }
+  }
+}
